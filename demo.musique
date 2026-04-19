@@ -1,0 +1,163 @@
+// ============================================================
+// demo.musique — démonstration de toutes les fonctionnalités
+// ============================================================
+
+
+// --- 1. Notes simples, toutes les durées, altérations -------
+Part intro {
+    tempo 120;
+    volume 75;
+
+    // Toutes les durées
+    play C4 whole;
+    play C4 half;
+    play C4 quarter;
+    play C4 eighth;
+    play C4 sixteenth;
+
+    // Durées pointées (x1.5)
+    play C4 half.;
+    play C4 quarter.;
+    play C4 eighth.;
+
+    // Dièses et bémols
+    play F#4 quarter;
+    play Bb3 quarter;
+    play C#5 eighth;
+    play Eb4 eighth;
+    play Ab3 half;
+    play G#4 half;
+}
+
+
+// --- 2. Accords (chord) -------------------------------------
+Part harmonie {
+    tempo 100;
+    volume 85;
+
+    // Accord majeur de Do
+    chord [C4, E4, G4] half;
+
+    // Accord mineur de Ré
+    chord [D4, F4, A4] half;
+
+    // Accord de Sol majeur
+    chord [G3, B3, D4] quarter;
+
+    // Accord de La mineur
+    chord [A3, C4, E4] quarter;
+
+    // Accord avec 4 notes
+    chord [C4, E4, G4, B4] whole;
+}
+
+
+// --- 3. Silences (wait) -------------------------------------
+Part rythme {
+    tempo 140;
+    volume 90;
+
+    // Silence d'une durée simple
+    play C4 eighth;
+    wait 1 eighth;
+    play C4 eighth;
+    wait 1 eighth;
+
+    // Silence pointé
+    play D4 quarter;
+    wait 1 quarter.;
+    play E4 eighth;
+
+    // Silence avec multiplicateur
+    play G4 quarter;
+    wait 3 quarter;
+    play G4 quarter;
+
+    // Silence d'une mesure entière
+    wait 1 whole;
+    play C5 quarter;
+}
+
+
+// --- 4. Boucles (repeat) ------------------------------------
+Part arpege {
+    tempo 160;
+    volume 70;
+
+    // Boucle simple
+    repeat 4 {
+        play C4 sixteenth;
+        play E4 sixteenth;
+        play G4 sixteenth;
+        play B4 sixteenth;
+    }
+
+    // Boucles imbriquées
+    repeat 2 {
+        repeat 3 {
+            play D4 eighth;
+            play F#4 eighth;
+        }
+        wait 1 quarter;
+    }
+}
+
+
+// --- 5. Mélodie avec appels de parties ----------------------
+Part couplet {
+    tempo 110;
+    volume 80;
+
+    play E4 quarter;
+    play D4 quarter;
+    play C4 half;
+
+    play D4 quarter;
+    play E4 quarter;
+    play E4 quarter.;
+    play E4 eighth;
+
+    play D4 quarter;
+    play D4 quarter;
+    play E4 quarter;
+    play G4 half;
+}
+
+Part refrain {
+    volume 95;
+    tempo 110;
+
+    chord [C4, E4, G4] quarter;
+    play E4 quarter;
+    play F4 quarter;
+    play G4 half;
+
+    repeat 2 {
+        chord [G3, B3, D4] eighth;
+        chord [C4, E4, G4] eighth;
+        wait 1 quarter;
+    }
+
+    play C5 whole;
+}
+
+
+// --- 6. Song : structure complète avec repeat ---------------
+Song {
+    intro;
+
+    repeat 2 {
+        couplet;
+        refrain;
+    }
+
+    harmonie;
+    rythme;
+    arpege;
+
+    repeat 3 {
+        couplet;
+    }
+
+    refrain;
+}

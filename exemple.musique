@@ -1,0 +1,84 @@
+Part part1 {
+    tempo 150;
+    volume 80;
+
+    play F#4 half;
+    play D4 half.;
+
+    play D4 eighth;
+    play E4 eighth;
+    play F4 quarter;
+
+    play E4 quarter;
+
+    play D4 eighth.;
+
+    play C#4 quarter;
+
+    play D4 quarter;
+
+    play E4 eighth.;
+
+    play F#4 half;
+
+    play B4 half;
+
+    play B3 eighth.;
+
+    play C#4 eighth.;
+
+    play D4 quarter;
+
+    play E4 quarter;
+
+    play D4 eighth.;
+
+    play C#4 quarter;
+
+    play A4 quarter;
+
+    play G4 eighth.;
+    play F#4 half;
+
+    play D4 half.;
+
+    play D4 eighth;
+    play E4 eighth;
+    play F4 quarter;
+
+    play E4 quarter;
+
+    play D4 eighth.;
+
+    play C#4 quarter;
+
+    play D4 quarter;
+
+    play E4 eighth.;
+
+    play F#4 half;
+
+    play B4 half;
+
+    play B4 eighth.;
+
+    play C#5 eighth.;
+
+    play D5 quarter;
+
+    play G4 quarter;
+
+    play F#4 eighth.;
+
+    play F4 quarter;
+
+    play D5 quarter;
+
+    play A#4 eighth.;
+
+    play B4 quarter.;
+}
+
+Song {
+    part1;
+}
